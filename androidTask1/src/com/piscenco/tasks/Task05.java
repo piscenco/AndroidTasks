@@ -39,7 +39,7 @@ class RandomFromArray {
         for( int i = 0; i < weights.length;i++) {
             sum += weights[i];
             if(sum > rand_el_index)
-                return i;
+                return this.values[i];
         }
         return 0;
     }
