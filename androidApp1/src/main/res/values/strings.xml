@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">SimpleApp</string>
+    <string name="date1">17.11.2020</string>
+    <string name="flower_desription">Anthericum liliago is a species of flowering plant in the family Asparagaceae. It is native to mainland Europe and Turkey.</string>
+    <string name="title_activity_subsidiary">SubsidiaryActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="img_descr">a white flower</string>
+    <string name="large_text">Anthericum liliago is a species of flowering plant in the family Asparagaceae.
+        is native to mainland Europe (not the British Isles) and Turkey, growing in dry pastures,
+        stony places and open woods and flowering in early summer. In Sweden the northernmost stable
+        populations grows along the rocky shores of Lake Sommen (58° N), albeit on occasions
+        it has been found as far north as Uppland. The specific epithet liliago means lily-like or lily-carrier.
+        Like many plants whose common names include "lily", it is not closely related to the true lilies.
+It is a vigorous herbaceous flowering perennial with tuberous roots, 60–90 cm (2.0–3.0 ft) high,
+        with leaves narrowly linear, 12–40 cm (4.7–15.7 in). and producing racemes of 6-10 lily-like white flowers in Spring and Summer.
+Best grown in well-drained soil in a sunny position, A. liliago can be propagated by seed or by division of the rootstock every 3 to 4 years.
+        It is a slow starter but forms large clumps with time. The cultivar ‘Major’ has gained the Royal Horticultural Society’s Award of Garden Merit.</string>
+</resources>
