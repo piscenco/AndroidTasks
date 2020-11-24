@@ -7,29 +7,30 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     android:padding="@dimen/box_inset_layout_padding"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context=".SubsidiaryActivity"
     tools:deviceIds="wear">
 
     <ImageView
         android:id="@+id/flowerImage1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="@dimen/medium_margin_size"
         android:layout_marginStart="@dimen/medium_margin_size"
-        android:layout_marginTop="@dimen/medium_margin_size"
+        android:layout_marginTop="@dimen/box_inset_layout_padding"
         android:layout_marginEnd="@dimen/medium_margin_size"
         android:foregroundGravity="center"
-        android:scaleType="fitCenter"
-        android:layout_gravity="center_horizontal"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_vertical"
         app:srcCompat="@drawable/flower" />
 
     <TextView
         android:id="@+id/flower_large_dicr_id"
+        android:textSize="@dimen/medium_text_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/medium_text_size"
-        android:layout_marginStart="@dimen/medium_margin_size"
         android:layout_marginTop="@dimen/small_margin_size"
         android:layout_marginEnd="@dimen/medium_margin_size"
-        android:text="@string/large_text" />
+        android:text="@string/large_text"
+        android:layout_gravity="center_vertical"/>
 </LinearLayout>
