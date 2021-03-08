@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#98DBC6
+    </color>
+    <color name="colorPrimaryDark">#5BC8AC</color>
+    <color name="colorAccent">#F18D9E</color>
+    <color name="canaryYellow">#E6D72A</color>
+    <color name="SnowWhite">#FFFFFF</color>
+</resources>
