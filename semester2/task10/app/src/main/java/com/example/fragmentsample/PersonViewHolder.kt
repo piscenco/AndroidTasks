@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 abstract class PersonViewHolder(itemView: View, listener: PersonAdapter.Listener?)
 	: RecyclerView.ViewHolder(itemView) {
 	protected val textView: TextView = itemView.findViewById(R.id.flowerNameTextView)
-	protected lateinit var data: Person
+	protected lateinit var data: FlowerEl
 
 	init {
 		itemView.setOnClickListener {
@@ -15,6 +15,6 @@ abstract class PersonViewHolder(itemView: View, listener: PersonAdapter.Listener
 		}
 	}
 
-	abstract fun bind(person: Person)
+	abstract fun bind(flowerEl: FlowerEl)
 
 }

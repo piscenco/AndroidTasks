@@ -9,8 +9,8 @@ import java.util.*
 
 
 object PersonRepository {
-	private val PERSON_LIST: MutableMap<Long, Person> = HashMap()
-	private val DESCR_LIST: MutableMap<Long, Person> = HashMap()
+	private val FLOWER_EL_LIST: MutableMap<Long, FlowerEl> = HashMap()
+	private val DESCR_LIST: MutableMap<Long, FlowerEl> = HashMap()
 	fun initialize(context: Context) {
 		try {
 			// ???
@@ -19,7 +19,7 @@ object PersonRepository {
 				var name = reader.readLine()
 				var id: Long = 0
 				while(!TextUtils.isEmpty(name)) {
-					PERSON_LIST[id] = Person(id, name)
+					FLOWER_EL_LIST[id] = FlowerEl(id, name)
 					++id
 					name = reader.readLine()
 					//flower_names.add(name)
@@ -30,7 +30,7 @@ object PersonRepository {
 				var new_descr = reader.readLine()
 				var id: Long = 0
 				while(!TextUtils.isEmpty(new_descr)) {
-					DESCR_LIST[id] = Person(id, new_descr)
+					DESCR_LIST[id] = FlowerEl(id, new_descr)
 					++id
 					new_descr = reader.readLine()
 				}
@@ -42,15 +42,15 @@ object PersonRepository {
 		}
 	}
 
-	fun getPersonList(): List<Person> {
-		return ArrayList(PERSON_LIST.values)
+	fun getPersonList(): List<FlowerEl> {
+		return ArrayList(FLOWER_EL_LIST.values)
 	}
 
-	fun getPersonById(id: Long): Person {
-		return PERSON_LIST[id] ?: throw Exception()
+	fun getPersonById(id: Long): FlowerEl {
+		return FLOWER_EL_LIST[id] ?: throw Exception()
 	}
 
-	fun getDescrList():List<Person>{
+	fun getDescrList():List<FlowerEl>{
 	     return ArrayList(DESCR_LIST.values)
 	}
 	fun getDescrById(id: Long): String {

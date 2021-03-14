@@ -11,13 +11,16 @@ class PersonAdapter : RecyclerView.Adapter<PersonViewHolder>() {
 		private const val RIGHT_VIEW_HOLDER_TYPE = 1
 	}
 
-	var personList: List<Person> = emptyList()
-	var descrList: List<Person> = emptyList()
+	var flowerElList: List<FlowerEl> = emptyList()
+	var descrList: List<FlowerEl> = emptyList()
 
 	var listener: Listener? = null
 
 	interface Listener {
-		fun onPersonClick(id: Long)
+		fun onPersonClick(id: Long) {
+
+
+		}
 	}
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonViewHolder {
@@ -32,11 +35,11 @@ class PersonAdapter : RecyclerView.Adapter<PersonViewHolder>() {
 	}
 
 	override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
-		holder.bind(personList[position])
+		holder.bind(flowerElList[position])
 	}
 
 	override fun getItemCount(): Int {
-		return personList.size
+		return flowerElList.size
 	}
 
 	override fun getItemViewType(position: Int): Int {

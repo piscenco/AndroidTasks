@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class ListFragment : Fragment(), PersonAdapter.Listener {
+
+
 	override fun onCreateView(
 			inflater: LayoutInflater,
 			container: ViewGroup?,
@@ -27,6 +28,7 @@ class ListFragment : Fragment(), PersonAdapter.Listener {
 
 	override fun onPersonClick(id: Long) {
 		//startActivity(PersonDetailActivity.getIntent(this, id)) // open de
+		(requireActivity() as DemoActivity).showDetailFragment("ghjkajsjakasd")
 	}
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,9 +42,9 @@ class ListFragment : Fragment(), PersonAdapter.Listener {
 		val adapter = PersonAdapter()
 		recyclerView.adapter = adapter
 		//PersonRepository.initialize(context)
-		adapter.personList = PersonRepository.getPersonList()
+		adapter.flowerElList = PersonRepository.getPersonList()
 		adapter.listener = this
-		adapter.notifyDataSetChanged()
+
 		val items = adapter.getItemCount()
 		for(pos in 0 until items) {
 			val v = recyclerView.layoutManager!!.findViewByPosition(pos)
@@ -50,6 +52,7 @@ class ListFragment : Fragment(), PersonAdapter.Listener {
 				(requireActivity() as DemoActivity).showDetailFragment("ghjkajsjakasd")
 			}
 		}
+		adapter.notifyDataSetChanged()
 
 
 		/*view.findViewById<View>(R.id.openDetailButton).setOnClickListener {

@@ -1,9 +1,6 @@
 package com.example.fragmentsample
 
-import android.view.Gravity
 import android.view.View
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 
 class RightPersonViewHolder(
 	itemView: View,
@@ -13,9 +10,9 @@ class RightPersonViewHolder(
 		//textView.gravity = Gravity.END
 	}
 
-	override fun bind(person: Person) {
-		data = person
-		textView.text = person.name
+	override fun bind(flowerEl: FlowerEl) {
+		data = flowerEl
+		textView.text = flowerEl.name
 	}
 
 }

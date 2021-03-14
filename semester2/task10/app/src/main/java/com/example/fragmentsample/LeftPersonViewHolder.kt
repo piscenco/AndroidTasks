@@ -11,9 +11,9 @@ class LeftPersonViewHolder(
         textView.gravity = Gravity.START
     }
 
-    override fun bind(person: Person) {
-        data = person
-        textView.text = person.name
+    override fun bind(flowerEl: FlowerEl) {
+        data = flowerEl
+        textView.text = flowerEl.name
     }
 
 }

@@ -6,9 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class PersonListActivity : AppCompatActivity(), PersonAdapter.Listener {
-	override fun onPersonClick(id: Long) {
-		//startActtivity(PersonDetailActivity.getIntent(this, id))
-	}
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -22,7 +19,7 @@ class PersonListActivity : AppCompatActivity(), PersonAdapter.Listener {
 		val adapter = PersonAdapter()
 		recyclerView.adapter = adapter
         PersonRepository.initialize(this)
-		adapter.personList = PersonRepository.getPersonList()
+		adapter.flowerElList = PersonRepository.getPersonList()
 		adapter.listener = this
 	}
 }
