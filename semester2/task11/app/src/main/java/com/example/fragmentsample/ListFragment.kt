@@ -27,11 +27,11 @@ class ListFragment : Fragment(){
 		super.onViewCreated(view, savedInstanceState)
 		// view is root
 		view.findViewById<View>(R.id.card1).setOnClickListener {
-			(requireActivity() as DemoActivity).showDetailFragment(resources.getString(R.string.iris_text))
+			(requireActivity() as DemoActivity).showDetailFragment("iris")
 		}
 
 		view.findViewById<View>(R.id.card2).setOnClickListener {
-			(requireActivity() as DemoActivity).showDetailFragment(resources.getString(R.string.rose_text))
+			(requireActivity() as DemoActivity).showDetailFragment("rose")
 		}
 
 	}

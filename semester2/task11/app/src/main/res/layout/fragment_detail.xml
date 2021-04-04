@@ -1,19 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent">
+    android:background="#d2d2d2">
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#d2d2d2"
+    >
+    <ImageView
+        android:id="@+id/detailed_img"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/small_margin_size"
+        android:foregroundGravity="center_vertical"
+        android:src="@drawable/floral_elements"
+        android:contentDescription="@string/img_descr"
+        android:layout_gravity="center_horizontal"
+        />
 
     <TextView
         android:id="@+id/detailTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="match_parent"
         android:textSize="@dimen/medium_text_size"
-        android:layout_marginStart="@dimen/medium_margin_size"
         android:layout_marginTop="@dimen/small_margin_size"
-        android:layout_marginEnd="@dimen/medium_margin_size"
-        android:text="@string/large_text"
-        android:textColor="@color/SnowWhite"/>
+        android:layout_marginStart="@dimen/small_margin_size"
+        android:layout_marginEnd="@dimen/small_margin_size"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/large_text" />
 
-
-</FrameLayout>
+</LinearLayout>
+</ScrollView>
