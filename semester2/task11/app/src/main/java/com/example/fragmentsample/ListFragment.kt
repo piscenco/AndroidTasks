@@ -34,6 +34,10 @@ class ListFragment : Fragment(){
 			(requireActivity() as DemoActivity).showDetailFragment("rose")
 		}
 
+		view.findViewById<View>(R.id.card3).setOnClickListener {
+			(requireActivity() as DemoActivity).showDetailFragment("camera")
+		}
+
 	}
 
 	companion object {
