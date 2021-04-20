@@ -2,6 +2,7 @@ package com.example.fragmentsample.db
 
 import android.database.sqlite.SQLiteDatabase
 import android.provider.BaseColumns
+// does not work on sdk 30. why?
 
 object FlowerContract {
     const val TABLE_NAME = "person_table"

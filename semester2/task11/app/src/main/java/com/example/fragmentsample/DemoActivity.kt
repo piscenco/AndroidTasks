@@ -10,7 +10,37 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.example.fragmentsample.DetailFragment.Companion.newInstance
 
+import androidx.annotation.NonNull
+import androidx.annotation.Nullable
+import androidx.camera.core.ImageCapture
+import androidx.camera.core.ImageCaptureException;
+import androidx.camera.view.CameraController;
+import androidx.camera.view.LifecycleCameraController;
+import androidx.camera.view.PreviewView;
+import androidx.core.content.ContextCompat;
+
+
+import android.net.Uri
+import android.util.Log
+import java.util.concurrent.Executors
+import androidx.camera.core.*
+import androidx.camera.lifecycle.ProcessCameraProvider
+import kotlinx.android.synthetic.main.activity_main.*
+import java.io.File
+import java.nio.ByteBuffer
+import java.text.SimpleDateFormat
+import java.util.*
+import java.util.concurrent.ExecutorService
+typealias LumaListener = (luma: Double) -> Unit
+
+
 class DemoActivity : AppCompatActivity() {
+
+	private var imageCapture: ImageCapture? = null
+
+	private lateinit var outputDirectory: File
+	private lateinit var cameraExecutor: ExecutorService
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_demo)
@@ -42,7 +72,21 @@ class DemoActivity : AppCompatActivity() {
 			super.onBackPressed()
 		}
 	}
-
+/*
+	override fun onRequestPermissionsResult(
+			requestCode: Int, permissions: Array<String>, grantResults:
+			IntArray) {
+		if (requestCode == REQUEST_CODE_PERMISSIONS) {
+			if (allPermissionsGranted()) {
+				startCamera()
+			} else {
+				Toast.makeText(this,
+						"Permissions not granted by the user.",
+						Toast.LENGTH_SHORT).show()
+				finish()
+			}
+		}
+	}*/
 
 	companion object {
 		fun getIntent(context: Context): Intent {

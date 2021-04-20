@@ -14,9 +14,11 @@ import java.util.*
 import com.example.fragmentsample.App.Companion.databaseHolder
 
 import com.squareup.picasso.Picasso;
+import kotlinx.android.synthetic.main.fragment_detail.*
 
 class DetailFragment : Fragment(), View.OnClickListener {
 	private lateinit var textView: TextView
+	private lateinit var resultTextView: TextView
 	private lateinit var flowerRepository: FlowerRepository
 
 	override fun onCreateView(
@@ -35,21 +37,29 @@ class DetailFragment : Fragment(), View.OnClickListener {
 		if(flower_name=="iris") {
 			textView.text = resources.getString(R.string.iris_text)
 			imageView.setImageResource(R.drawable.iris1)
+
+			Picasso
+					.get()
+					.load("https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Iris_germanica_%28Purple_bearded_Iris%29%2C_Wakehurst_Place%2C_UK_-_Diliff.jpg/800px-Iris_germanica_%28Purple_bearded_Iris%29%2C_Wakehurst_Place%2C_UK_-_Diliff.jpg")
+					.fit()
+					.centerInside()
+					.into(imageView);
+
 		}
 		if(flower_name=="rose") {
 			textView.text = resources.getString(R.string.rose_text)
 			//
 			//imageView.setImageResource(R.drawable.rose)
-			// "https://img1.akspic.com/image/94611-kitten-american_shorthair-cat-whiskers-munchkin_cat-2560x1440.jpg"
+			// "https://img1.akspic.com/image/94611-kitten-american_shorthair-cat-whiskers-munchkin_cat-2560x1440.jpg" -- ссылка с семинара уже не работает
 			// "https://www.thephotoargus.com/wp-content/uploads/2020/02/rosepic15.jpg"
 			Picasso
 					.get()
-					.load("https://img1.akspic.com/image/94611-kitten-american_shorthair-cat-whiskers-munchkin_cat-2560x1440.jpg")
+					.load("https://www.thephotoargus.com/wp-content/uploads/2020/02/rosepic15.jpg")
 					.fit()
-					.centerCrop()
+					.centerInside()
 					.into(imageView);
 		}
-		textView = view.findViewById(R.id.textView)
+		resultTextView = view.findViewById(R.id.resultTextView)
 		view.findViewById<View>(R.id.createButton).setOnClickListener(this)
 		view.findViewById<View>(R.id.loadButton).setOnClickListener(this)
 		flowerRepository = FlowerRepository(databaseHolder ?: return)
@@ -77,6 +87,7 @@ class DetailFragment : Fragment(), View.OnClickListener {
 	}
 
 
+
 	private fun onLoadButtonClick() {
 		object : AsyncTask<Void?, Void?, String>() {
 			override fun doInBackground(vararg voids: Void?): String {
@@ -85,7 +96,8 @@ class DetailFragment : Fragment(), View.OnClickListener {
 
 			override fun onPostExecute(s: String) {
 				super.onPostExecute(s)
-				textView.text = s
+				//var resultTextView = view?.findViewById<ImageView>(R.id.resultTextView)
+				resultTextView.text = s // в каком потоке он меняет?
 			}
 		}.execute()
 	}
